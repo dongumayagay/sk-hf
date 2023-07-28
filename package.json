@@ -1,7 +1,11 @@
 {
-	"name": "hg-tranformer-test",
-	"version": "0.0.1",
+	"name": "sveltekit-hugging-face-transformers",
+	"version": "0.0.2",
 	"private": true,
+	"author": {
+		"name": "Don Gumayagay",
+		"email": "dngumayagay@gmail.com"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
