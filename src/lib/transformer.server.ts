@@ -1,3 +1,3 @@
 import { pipeline } from '@xenova/transformers';
 
-export const classifier = await pipeline('sentiment-analysis');
+export const sentiment_classifier = await pipeline('sentiment-analysis');
