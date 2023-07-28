@@ -1,5 +1,5 @@
-import { classifier } from '$lib/transformer';
-import type { PageLoad } from './$types';
+import { classifier } from '$lib/transformer.server';
+import type { PageServerLoad } from './$types';
 
 export const load = (async ({ url }) => {
     const text = url.searchParams.get('text')
@@ -9,4 +9,4 @@ export const load = (async ({ url }) => {
             result: await classifier(text)
         }
     }
-}) satisfies PageLoad;
+}) satisfies PageServerLoad;
