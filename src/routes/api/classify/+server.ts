@@ -1,7 +1,6 @@
 // import { sentiment_classifier } from '$lib/transformer.server';
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-
 import { pipeline } from '@xenova/transformers';
 
 const sentiment_classifier = await pipeline('sentiment-analysis', 'Xenova/distilbert-base-uncased-finetuned-sst-2-english');

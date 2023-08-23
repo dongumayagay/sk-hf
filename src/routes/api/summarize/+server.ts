@@ -1,11 +1,12 @@
-import { summarizer } from '$lib/transformer.server';
-import { error, json } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
+import { pipeline } from '@xenova/transformers';
+
+const summarizer = await pipeline('summarization',"Xenova/distilbart-cnn-6-6");
 
 export const GET: RequestHandler = async ({ url }) => {
     const text = url.searchParams.get('text')
     if (!text) throw error(400, 'provide "text" query params')
     const result = await summarizer(text)
-    return json({ text, ...result[0] })
-    return new Response('summarize')
+    return new Response(result[0].summary_text)
 };
